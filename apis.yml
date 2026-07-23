@@ -1,0 +1,52 @@
+aid: cibc-us
+url: https://raw.githubusercontent.com/api-evangelist/cibc-us/refs/heads/main/apis.yml
+name: CIBC Bank USA
+kind: company
+description: >-
+  CIBC Bank USA is an Illinois state-chartered, FDIC-insured commercial bank
+  (FDIC Cert #33306) headquartered at 120 South LaSalle Street in Chicago,
+  Illinois. Formerly The PrivateBank and Trust Company, it was acquired in 2017
+  and rebranded, and today operates as a wholly owned US subsidiary of Canadian
+  Imperial Bank of Commerce (CIBC) through the intermediate holding company CIBC
+  Bancorp USA Inc. The bank focuses on commercial banking, capital markets,
+  wealth management, trust services, private banking, and cross-border services
+  for clients with North American operations, rather than mass-market retail. As
+  a US regional institution, CIBC Bank USA publishes no first-party public
+  developer portal or open API program; consumer-permissioned account and
+  balance data is reached only through third-party aggregators such as Plaid,
+  and the CIBC group has a data-access agreement with MX. It is not a documented
+  direct Financial Data Exchange (FDX) participant and has published no explicit
+  CFPB Section 1033 data-access posture, making its honest API surface
+  aggregator-mediated only.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Financial Services
+- Banking
+- United States
+- Commercial Banking
+- Regional Bank
+- Private Banking
+- Open Finance
+- Data Aggregation
+created: '2026-07-23'
+modified: '2026-07-23'
+specificationVersion: '0.19'
+apis: []
+common:
+- type: Website
+  url: https://us.cibc.com
+- type: About
+  url: https://us.cibc.com/en/about-us.html
+- type: LinkedIn
+  url: https://www.linkedin.com/company/cibc
+- type: PrivacyPolicy
+  url: https://us.cibc.com/en/privacy-security.html
+- type: TermsOfService
+  url: https://us.cibc.com/en/legal.html
+- type: SignOn
+  url: https://us.cibc.com/en/sign-on-hub.html
+- type: DataAggregation
+  url: https://plaid.com/institutions/cibc/
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

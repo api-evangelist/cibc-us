@@ -1,0 +1,79 @@
+aid: cibc-us
+name: CIBC Bank USA
+review:
+  question: Does CIBC Bank USA expose a first-party public developer API or open-banking data-access API?
+  answer: false
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    CIBC Bank USA (us.cibc.com) publishes no first-party public developer
+    portal, no API reference, and no downloadable OpenAPI/Swagger. It is an
+    Illinois state-chartered, FDIC-insured commercial bank (FDIC Cert #33306),
+    a wholly owned US subsidiary of Canadian Imperial Bank of Commerce, focused
+    on commercial, capital-markets, wealth, trust, and private banking rather
+    than a developer platform. Probes of common developer hostnames did not
+    resolve to a US developer portal, and the public marketing site carries no
+    developer or API documentation. Consumer-permissioned account data is
+    reachable only through third-party aggregators: CIBC is listed by Plaid
+    (Assets, Auth, Balance) and the CIBC group holds a data-access agreement
+    with MX. The bank is not a documented direct FDX participant and has
+    published no explicit CFPB Section 1033 data-access posture. The honest API
+    surface is aggregator-mediated only; there is no first-party spec to harvest.
+  charterType: Illinois state-chartered commercial bank, FDIC-insured, Federal Reserve nonmember (FDIC Cert #33306)
+  ownership: Wholly owned US subsidiary of Canadian Imperial Bank of Commerce (CIBC) via CIBC Bancorp USA Inc.
+  firstPartyDeveloperPortal: false
+  downloadableSpec: false
+  fdxParticipant: false
+  section1033Posture: none-published
+  aggregatorOnly: true
+  authModel: none-public
+  specProvenance: none
+  probes:
+    - url: https://us.cibc.com
+      status: 200
+      note: Public marketing/banking site; no developer or API content.
+    - url: https://us.cibc.com/en/about-us.html
+      status: 200
+      note: About page; confirms charter/ownership, no API mention.
+    - url: https://developer.cibc.com
+      status: 000
+      note: Does not resolve / no response.
+    - url: https://developer.us.cibc.com
+      status: 000
+      note: Does not resolve / no response.
+    - url: https://api.us.cibc.com
+      status: 000
+      note: Does not resolve / no response.
+    - url: https://plaid.com/institutions/cibc/
+      status: 200
+      note: Aggregator access via Plaid (Assets, Auth, Balance).
+  transports:
+    - protocol: REST
+      documented: false
+      note: No first-party REST API is documented for CIBC Bank USA.
+    - protocol: FDX
+      documented: false
+      note: No documented direct Financial Data Exchange conformant API.
+  aggregators:
+    - name: Plaid
+      url: https://plaid.com/institutions/cibc/
+      products: [Assets, Auth, Balance]
+    - name: MX
+      note: CIBC group data-access agreement announced with MX for consumer-permissioned data sharing.
+sources:
+  - url: https://us.cibc.com/en/about-us.html
+    type: About
+    note: Charter, ownership, and business focus of CIBC Bank USA.
+  - url: https://plaid.com/institutions/cibc/
+    type: DataAggregation
+    note: Confirms aggregator-mediated access (Assets, Auth, Balance).
+  - url: https://www.fdic.gov/resolutions/cibc-2025-resolution-plan-public-section.pdf
+    type: Regulatory
+    note: CIBC Bank USA Insured Depository Institution resolution plan (charter/ownership).
+actions:
+  apisHarvested: 0
+  openapiHarvested: false
+  reason: |
+    No public API surface exists for CIBC Bank USA. Record kept as an honest
+    identity-only (built-stub) profile with aggregator-only data-access posture.
